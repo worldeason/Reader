@@ -100,6 +100,8 @@
 
 	if (self.isCancelled == YES) return;
 
+	[[NSThread currentThread] setName:@"ReaderThumbFetch"];
+
 	NSURL *thumbURL = [self thumbFileURL]; CGImageRef imageRef = NULL;
 
 	CGImageSourceRef loadRef = CGImageSourceCreateWithURL((CFURLRef)thumbURL, NULL);
